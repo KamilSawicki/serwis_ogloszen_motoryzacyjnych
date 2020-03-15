@@ -1,0 +1,5 @@
+ROUTE MAP
+---SESSION---
+[POST]/login
+[GET]/status
+[GET}/logout

@@ -28,6 +28,7 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	compile group: 'net.minidev', name: 'json-smart', version: '1.0.6.3'
 }
 
 test {
