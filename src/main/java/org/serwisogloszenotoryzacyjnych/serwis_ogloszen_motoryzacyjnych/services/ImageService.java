@@ -21,8 +21,8 @@ public class ImageService {
         return imageRepository.findAll();
     }
 
-    public List<Image> getByAd(int idAd){
-        return imageRepository.findByIdAd();
+    public List<Image> getByAd(int id){
+        return imageRepository.findById(id);
     }
     
     public boolean store(Image image){
