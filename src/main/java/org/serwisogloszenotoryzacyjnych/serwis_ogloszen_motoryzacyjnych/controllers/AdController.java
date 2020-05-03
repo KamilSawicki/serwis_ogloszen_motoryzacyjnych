@@ -197,7 +197,7 @@ public class AdController extends Controller {
         }
         return result ;
     }
-    
+
 
 
 @DeleteMapping("/{id}")

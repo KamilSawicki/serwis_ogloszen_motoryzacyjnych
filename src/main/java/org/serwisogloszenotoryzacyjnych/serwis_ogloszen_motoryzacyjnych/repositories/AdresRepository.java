@@ -13,9 +13,10 @@ public interface AdresRepository extends JpaRepository<Adres, Integer>
     public Adres findByUlica(String ulica);
     
     public Adres findByMiasto(String miasto);
-    
-    public Adres findByKod(String kod_pocztowy);
-    
-    public Adres findByNumer(String numer_budynku);
-    
+
+    public Adres findByKodPocztowy(String kodPocztowy);
+
+    public Adres findByNrBudynku(String nrBudynku);
+
+
 }
