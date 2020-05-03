@@ -17,6 +17,10 @@ public class ImageService {
         return imageRepository.findSingleById(id);
     }
     
+    public Image get(String url) {
+        return imageRepository.findSingleByUrl(url);
+    }
+    
     public List<Image> get(){
         return imageRepository.findAll();
     }

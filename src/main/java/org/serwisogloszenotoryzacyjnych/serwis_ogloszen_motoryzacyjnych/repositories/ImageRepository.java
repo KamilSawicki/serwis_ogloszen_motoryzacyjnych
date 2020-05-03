@@ -8,6 +8,8 @@ import java.util.List;
 public interface ImageRepository extends JpaRepository<Image, Integer> {
    
     public Image findSingleById(int id);
+    
+    public Image findSingleByUrl(String url);
 
     public List<Image> findAll();
     
