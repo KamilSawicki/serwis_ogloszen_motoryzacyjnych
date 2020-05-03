@@ -12,13 +12,10 @@ public class Controller {
 
     @Autowired
     public UserService userService;
-<<<<<<< HEAD
 
     @Autowired
     public AdService adService;
-=======
     
     @Autowired
     public AdresService adresService;
->>>>>>> 0f3ee58c230758ef474fad7e98ff840ae815a665
 }

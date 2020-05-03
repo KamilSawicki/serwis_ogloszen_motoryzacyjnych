@@ -17,6 +17,7 @@ public class User {
     public String firstName;
     public String lastName;
     public String email;
+    public boolean admin;
 
     public User() {
         username=null;
@@ -25,6 +26,7 @@ public class User {
         lastName=null;
         email=null;
         id=null;
+        admin=false;
     }
 
     public Integer getId() {
@@ -73,5 +75,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 }
