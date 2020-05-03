@@ -15,7 +15,11 @@ public class Adres {
     public String miasto;
     public String kodPocztowy;
     public String ulica;
+<<<<<<< HEAD
     public String nrBudynku;
+=======
+    public String nrBudynku;    
+>>>>>>> 20bfb839680b14d693053b739e9ed1e9a3c8fb81
 
     public Integer getId() {
         return id;
