@@ -13,9 +13,9 @@ public class Adres {
     public Integer id;
     
     public String miasto;
-    public String kod_pocztowy;
+    public String kodPocztowy;
     public String ulica;
-    public String numer_budynku;    
+    public String nrBudynku;    
 
     public Integer getId() {
         return id;
@@ -33,12 +33,12 @@ public class Adres {
         this.miasto = miasto;
     }
 
-    public String getKod_pocztowy() {
-        return kod_pocztowy;
+    public String getKodPocztowy() {
+        return kodPocztowy;
     }
 
-    public void setKod_pocztowy(String kod_pocztowy) {
-        this.kod_pocztowy = kod_pocztowy;
+    public void setKodPocztowy(String kodPocztowy) {
+        this.kodPocztowy = kodPocztowy;
     }
 
     public String getUlica() {
@@ -49,11 +49,11 @@ public class Adres {
         this.ulica = ulica;
     }
 
-    public String getNumer_budynku() {
-        return numer_budynku;
+    public String getNrBudynku() {
+        return nrBudynku;
     }
 
-    public void setNumer_budynku(String numer_budynku) {
-        this.numer_budynku = numer_budynku;
+    public void setNrBudynku(String nrBudynku) {
+        this.nrBudynku = nrBudynku;
     }
 }

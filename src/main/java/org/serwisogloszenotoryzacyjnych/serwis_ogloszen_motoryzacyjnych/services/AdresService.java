@@ -30,12 +30,12 @@ public class AdresService {
     public boolean store(Adres adres){
         adres.setId(null);
         if(adres.getMiasto()!=null
-                && adres.getKod_pocztowy()!=null
+                && adres.getKodPocztowy()!=null
                 && adres.getUlica()!=null
-                && adres.getNumer_budynku()!=null
+                && adres.getNrBudynku()!=null
                 && adresRepository.findByMiasto(adres.getMiasto())==null
                 && adresRepository.findByUlica(adres.getUlica())==null
-                && adresRepository.findByNumer(adres.getNumer_budynku())==null
+                && adresRepository.findByNrBudynku(adres.getNrBudynku())==null
         ){
             adresRepository.save(adres);
             return true;
@@ -47,12 +47,12 @@ public class AdresService {
     public boolean update(Adres adres){
         adres.setId(null);
         if(adres.getMiasto()!=null
-                && adres.getKod_pocztowy()!=null
+                && adres.getKodPocztowy()!=null
                 && adres.getUlica()!=null
-                && adres.getNumer_budynku()!=null
+                && adres.getNrBudynku()!=null
                 && adresRepository.findByMiasto(adres.getMiasto())==null
                 && adresRepository.findByUlica(adres.getUlica())==null
-                && adresRepository.findByNumer(adres.getNumer_budynku())==null
+                && adresRepository.findByNrBudynku(adres.getNrBudynku())==null
         ){
             adresRepository.save(adres);
             return true;

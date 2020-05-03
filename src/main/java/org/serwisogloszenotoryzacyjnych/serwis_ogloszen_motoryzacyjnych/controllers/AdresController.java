@@ -44,13 +44,13 @@ public class AdresController extends Controller {
                 correct = false;
             }
 
-            if (!Pattern.matches("^[\\d]{2}-[\\d]{3}+$", adres.getKod_pocztowy())) {
+            if (!Pattern.matches("^[\\d]{2}-[\\d]{3}+$", adres.getKodPocztowy())) {
                 result.put("status", false);
                 result.put("message", "Niepoprawny kod pocztowy");
                 correct = false;
             }
 
-            if (!Pattern.matches("^[\\d]{3}+$", adres.getNumer_budynku())) {
+            if (!Pattern.matches("^[\\d]{3}+$", adres.getNrBudynku())) {
                 result.put("status", false);
                 result.put("message", "Niepoprawne numer budynku");
                 correct = false;
@@ -108,13 +108,13 @@ public class AdresController extends Controller {
                 correct = false;
             }
 
-            if (!Pattern.matches("^[\\d]{2}-[\\d]{3}+$", adres.getKod_pocztowy())) {
+            if (!Pattern.matches("^[\\d]{2}-[\\d]{3}+$", adres.getKodPocztowy())) {
                 result.put("status", false);
                 result.put("message", "Niepoprawny kod pocztowy");
                 correct = false;
             }
 
-            if (!Pattern.matches("^[\\d]{3}+$", adres.getNumer_budynku())) {
+            if (!Pattern.matches("^[\\d]{3}+$", adres.getNrBudynku())) {
                 result.put("status", false);
                 result.put("message", "Niepoprawne numer budynku");
                 correct = false;
