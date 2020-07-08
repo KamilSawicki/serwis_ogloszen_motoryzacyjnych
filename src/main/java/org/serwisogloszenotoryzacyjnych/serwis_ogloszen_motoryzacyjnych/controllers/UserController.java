@@ -97,6 +97,18 @@ public class UserController extends Controller {
                 correct = false;
             }
 
+            if (!Pattern.matches("^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ-]+$", json.get("city").toString())) {
+                result.put("status", false);
+                result.put("message", "Niepoprawna nazwa miejscowości");
+                correct = false;
+            }
+
+            if (!Pattern.matches("^[0-9]{9}$", json.get("phone").toString())) {
+                result.put("status", false);
+                result.put("message", "Niepoprawny numer telefonu");
+                correct = false;
+            }
+
             if (!Pattern.matches("^[a-zA-Z-]+$", json.get("city").toString())) {
                 result.put("status", false);
                 result.put("message", "Niepoprawna nazwa miejscowości");
