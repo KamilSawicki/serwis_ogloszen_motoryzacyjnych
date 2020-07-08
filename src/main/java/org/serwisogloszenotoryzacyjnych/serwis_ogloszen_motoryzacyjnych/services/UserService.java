@@ -25,13 +25,30 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public List<User> getAdmins(){
+        return userRepository.findByAdmin(true);
+    }
+
+    public boolean setAdmin(int userId, boolean privileges){
+        User user=null;
+        user=userRepository.findSingleById(userId);
+        if(user!=null){
+            user.setAdmin(privileges);
+            userRepository.save(user);
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public User getByToken(String token){return userRepository.findSingleByToken(token);}
+
     public boolean store(User user){
         user.setId(null);
         if(user.getEmail()!=null
                 && user.getUsername()!=null
                 && user.getPassword()!=null
-                && userRepository.findSingleByUsername(user.getUsername())==null
-                && userRepository.findSingleByEmail(user.getEmail())==null
         ){
             userRepository.save(user);
             return true;
@@ -44,8 +61,6 @@ public class UserService {
             if(user.getEmail()!=null
                     && user.getUsername()!=null
                     && user.getPassword()!=null
-                    && userRepository.findSingleByUsername(user.getUsername())==null
-                    && userRepository.findSingleByEmail(user.getEmail())==null
             ){
                 userRepository.save(user);
                 return true;

@@ -15,4 +15,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     public User findSingleByEmail(String email);
 
+    public User findSingleByToken(String token);
+
+    public List<User> findByAdmin(boolean admin);
+
 }

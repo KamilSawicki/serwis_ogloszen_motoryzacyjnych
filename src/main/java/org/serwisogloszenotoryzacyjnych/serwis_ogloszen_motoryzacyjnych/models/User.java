@@ -4,8 +4,10 @@ package org.serwisogloszenotoryzacyjnych.serwis_ogloszen_motoryzacyjnych.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
@@ -17,7 +19,10 @@ public class User {
     public String firstName;
     public String lastName;
     public String email;
-    public boolean admin;
+    public String city;
+    public String phone;
+    boolean admin;
+    public String token;
 
     public User() {
         username=null;
@@ -75,6 +80,30 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public boolean isAdmin() {
