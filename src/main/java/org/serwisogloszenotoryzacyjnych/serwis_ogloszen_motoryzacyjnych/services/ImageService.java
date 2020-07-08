@@ -1,5 +1,6 @@
 package org.serwisogloszenotoryzacyjnych.serwis_ogloszen_motoryzacyjnych.services;
 
+import org.serwisogloszenotoryzacyjnych.serwis_ogloszen_motoryzacyjnych.models.Ad;
 import org.serwisogloszenotoryzacyjnych.serwis_ogloszen_motoryzacyjnych.models.Image;
 import org.serwisogloszenotoryzacyjnych.serwis_ogloszen_motoryzacyjnych.repositories.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,16 +18,12 @@ public class ImageService {
         return imageRepository.findSingleById(id);
     }
     
-    public Image get(String url) {
-        return imageRepository.findSingleByUrl(url);
-    }
-    
     public List<Image> get(){
         return imageRepository.findAll();
     }
 
-    public List<Image> getByAd(int id){
-        return imageRepository.findById(id);
+    public List<Image> get(Ad ad){
+        return imageRepository.findByIdAd(ad.getId());
     }
     
     public boolean store(Image image){
