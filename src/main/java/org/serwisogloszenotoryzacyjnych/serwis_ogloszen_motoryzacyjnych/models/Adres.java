@@ -4,18 +4,20 @@ package org.serwisogloszenotoryzacyjnych.serwis_ogloszen_motoryzacyjnych.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "addresses")
 public class Adres {
-
+    
     @Id
     @GeneratedValue
     public Integer id;
-
+    
     public String miasto;
     public String kodPocztowy;
     public String ulica;
-    public String nrBudynku;
+    public String nrBudynku;    
 
     public Integer getId() {
         return id;

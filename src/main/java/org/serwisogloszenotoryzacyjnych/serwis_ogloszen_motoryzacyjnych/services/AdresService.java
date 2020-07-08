@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AdresService {
-
+    
     @Autowired
     AdresRepository adresRepository;
-
+    
     public Adres get(int id){
         return adresRepository.findSingleById(id);
     }
@@ -42,8 +42,8 @@ public class AdresService {
         }
         return false;
     }
-
-
+    
+    
     public boolean update(Adres adres){
         adres.setId(null);
         if(adres.getMiasto()!=null
@@ -61,12 +61,12 @@ public class AdresService {
     }
 
     public boolean remove(Adres adres){
-        if(adres.getId()!=null){
+        if(adres.getId()!=null){       
             adresRepository.delete(adres);
             return true;
         }
         return false;
     }
-
-
+    
+    
 }

@@ -17,16 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/adres")
 public class AdresController extends Controller {
-
+    
     @GetMapping
     public List<Adres> index() {
         return adresService.get();
     }
-
+    
     @PostMapping("/addadres")
     public JSONObject add(@RequestBody JSONObject json) {
         JSONObject result = new JSONObject();
-
+        
         boolean correct = true;
         Adres adres = adresService.get(json.get("id").toString());
 
@@ -55,7 +55,7 @@ public class AdresController extends Controller {
                 result.put("message", "Niepoprawne numer budynku");
                 correct = false;
             }
-
+            
 
             if (correct) {
                 adresService.store(adres);
@@ -64,9 +64,9 @@ public class AdresController extends Controller {
             }
         }
         return result;
-
+    
     }
-
+    
     @GetMapping("/{id}")
     public JSONObject read(@PathVariable int id) {
         JSONObject result = new JSONObject();
@@ -76,7 +76,7 @@ public class AdresController extends Controller {
 
         return result;
     }
-
+    
    /* @GetMapping("/{id}/miasto")
     public JSONObject readMiasto(@PathVariable int id) {
         JSONObject result = new JSONObject();
@@ -86,12 +86,12 @@ public class AdresController extends Controller {
 
         return result;
     }*/
-
+    
     @PutMapping("/{id}")
     public JSONObject update(@RequestBody JSONObject json, @PathVariable int id) {
         JSONObject result = new JSONObject();
-
-        boolean correct = true;
+        
+        boolean correct = true;    
         Adres adres = adresService.get(id);
 
         if (adres == null) {
@@ -119,7 +119,7 @@ public class AdresController extends Controller {
                 result.put("message", "Niepoprawne numer budynku");
                 correct = false;
             }
-
+            
 
             if (correct) {
                 adresService.store(adres);
@@ -128,11 +128,11 @@ public class AdresController extends Controller {
             }
         }
         return result;
-
+    
     }
-
+    
     @DeleteMapping("/{id}")
-    public JSONObject delete(@PathVariable int id) {
+        public JSONObject delete(@PathVariable int id) {
         JSONObject result = new JSONObject();
         Adres adres = adresService.get(id);
         adresService.remove(adres);
@@ -142,6 +142,6 @@ public class AdresController extends Controller {
 
         return result;
     }
-
-
+        
+    
 }
