@@ -1,11 +1,13 @@
 package org.serwisogloszenotoryzacyjnych.serwis_ogloszen_motoryzacyjnych.models;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import net.minidev.json.JSONObject;
 
 @Entity
+@Table(name = "ads")
 public class Ad {
 
     @Id
@@ -13,7 +15,7 @@ public class Ad {
     public Integer id;
 
     public String marka;
-    public String modell;
+    public String model;
     public String opis;
     public Integer cena;
     public Integer rok_produkcji;
@@ -23,12 +25,13 @@ public class Ad {
     public Integer moc_silnika;
     public Integer przebieg;
     public String status;
-    public Boolean accepted;
+    public Boolean accepted=false;
+    public int id_uzytkownika;
 
 
     public Ad() {
         marka=null;
-        modell=null;
+        model=null;
         opis=null;
         cena=null;
         rok_produkcji=null;
@@ -58,12 +61,12 @@ public class Ad {
         this.marka = marka;
     }
 
-    public String getModell() {
-        return modell;
+    public String getModel() {
+        return model;
     }
 
-    public void setModell(String modell) {
-        this.modell = modell;
+    public void setModel(String model) {
+        this.model= model;
     }
 
     public String getOpis() {
@@ -144,5 +147,32 @@ public class Ad {
 
     public void setAccepted(Boolean accepted) {
         this.accepted = accepted;
+    }
+
+    public int getId_uzytkownika() {
+        return id_uzytkownika;
+    }
+
+    public void setId_uzytkownika(int id_uzytkownika) {
+        this.id_uzytkownika = id_uzytkownika;
+    }
+
+    public Ad(JSONObject json){
+        marka=json.get("brand").toString();
+        model=json.get("model").toString();
+        opis=json.get("description").toString();
+        paliwo=json.get("fuel").toString();
+        rodzaj_nadwozia=json.get("body_type").toString();
+        status=json.get("type").toString();
+        accepted=false;
+        try{
+            cena=Integer.parseInt(json.get("price").toString());
+            rok_produkcji=Integer.parseInt(json.get("yearbook").toString());
+            pojemnosc_silnika=Integer.parseInt(json.get("engine_capacity").toString());
+            moc_silnika=Integer.parseInt(json.get("power").toString());
+            przebieg=Integer.parseInt(json.get("mileage").toString());
+        }catch(NumberFormatException e){
+            System.out.println(e.getMessage());
+        }
     }
 }
