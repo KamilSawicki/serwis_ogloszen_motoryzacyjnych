@@ -228,7 +228,7 @@ public class AdController extends Controller {
                 correct = false;
             }
 
-            if (!Pattern.matches("[0-9a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ., -]{10,}", json.get("description").toString())) {
+            if (!Pattern.matches(".{10,}", json.get("description").toString())) {
                 result.put("status", false);
                 result.put("message", "Niepoprawny opis");
                 correct = false;
